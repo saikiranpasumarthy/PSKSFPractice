@@ -1,0 +1,54 @@
+<apex:page controller="HotelRemoter" >
+    <head>
+        <style type= "text/css">
+            html { height: 100% }
+            body  { height: 100%; margin: 0; padding:0 }
+            #map-canvas { width: 800px; height:600px; }
+        </style>
+        <script src ="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script>
+            var map;
+        
+        function initialize()
+        {
+            var mapOptions = {
+                center: new google.maps.LatLng(12.984907, 80.240407),
+                zoom: 15
+            };
+            map = new google.maps.map(document.getelementbyid("map-canvas"), mapOptions);
+            loadHotels()
+        }
+        function loadHotels()
+    {
+        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.HotelRemoter.findAll}',
+            function(result, event){
+                
+                if(event.status){
+                    for(var i=0;i<result.length;i++){
+                        
+                        var id= result[i].id;
+                        var name= result[i].Name;
+                        var lat= result[i].location__latitude__s;
+                        var lng= result[i].location__longitude__s;
+                        addMarker(id, name, lat, lng);
+                        }
+                    } else {
+                        alert(event.message);
+                        }},{escape: true}                        
+                );
+        }
+ function addMarker(id, name, lat, lng){
+     var marker = new google.maps.Marker({
+         position: new googlemaps.Latlng(lat, lng),
+         map: map,
+         title: name});
+     google.maps.event.addListner(marker, 'click', function(event){
+         window.top.location = '/' + id;});    }
+ 
+        google.maps.event.addDomListner(window, 'Load', initialize);        
+        </script>
+    </head>
+    <body>
+        <div id="map-canvas"/>
+    </body>
+</apex:page>

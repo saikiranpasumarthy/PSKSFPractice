@@ -1,0 +1,5 @@
+<apex:page >
+    <c:First_One empname="Sai" background="grey" color="black" /> 
+    <c:First_One empname="kiran" background="grey" color="red" /> 
+    <c:First_One empname="johnny" background="grey" color="blue" />    
+</apex:page>

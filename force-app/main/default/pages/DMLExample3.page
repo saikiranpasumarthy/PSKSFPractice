@@ -1,0 +1,24 @@
+<apex:page controller="DMLExample3">
+    <apex:form >
+        <apex:pageMessages />
+        	<apex:pageBlock title="Contacts">
+                <apex:pageBlockButtons location="top">
+                    <apex:commandButton value="Save" action="{!save}"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockTable value="{!contacts}" var="c">
+                    <apex:column headerValue="Lastname">
+                        <apex:inputText value="{!c.Lastname}"/>
+                    </apex:column>    
+                    <apex:column headerValue="firstname">
+                        <apex:inputText value="{!c.firstname}"/>
+                    </apex:column>    
+                    <apex:column headerValue="phone">
+                        <apex:inputText value="{!c.phone}"/>
+                    </apex:column>    
+                    <apex:column headerValue="otherphone">
+                        <apex:inputText value="{!c.otherphone}"/>
+                    </apex:column>    
+                </apex:pageBlockTable>                 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page standardController="Opportunity" extensions="Mass_UpdateOpp" recordSetVar="items" >
+    <apex:form > 
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top" >
+                <apex:commandButton value="Update" action="{!invoke}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!opp}" var="o" >
+                <apex:column value="{!o.Name}" />
+                <apex:column value="{!o.StageName}" />
+                <apex:column value="{!o.CloseDate}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page controller="SOQL_Example_6" >
+    <apex:form >
+        <apex:pageBlock title="account wrapper" >
+            <apex:pageBlockTable value="{!accounts}" var="a" >
+                <apex:column >
+                    <apex:facet name="header"> <apex:inputCheckbox /> </apex:facet>
+                    <apex:inputCheckbox value="{!a.flag}" />
+                </apex:column>
+                <apex:column value="{!a.acc.name}" />
+                <apex:column value="{!a.acc.phone}" />                
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

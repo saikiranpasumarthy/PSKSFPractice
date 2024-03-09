@@ -1,0 +1,22 @@
+<apex:page controller="Pagination_Example" >
+    <br/><br/>
+    <apex:form id="dt" >
+    <apex:dataTable value="{!opp}" var="o" cellpadding="5" frame="border" rules="rows" width="600">
+        <apex:column value="{!o.Name}" headerValue="Name" />
+        <apex:column value="{!o.Amount}" headerValue="Amount" />
+        <apex:column value="{!o.StageName}" headerValue="StageName" />
+        <apex:column value="{!o.Closedate}" headerValue="Closedate" />
+    </apex:dataTable>
+    <centre>
+        {!controller.pagenumber} &nbsp; &nbsp; of {!totalpages} &nbsp; &nbsp; {!total}
+        <apex:commandLink value="First" action="{!controller.first}" rendered="{!controller.hasprevious}" reRender="dt" />
+        &nbsp;
+        <apex:commandLink value="Previous" action="{!controller.Previous}" rendered="{!controller.hasprevious}" reRender="dt" />
+        &nbsp;
+        <apex:commandLink value="Next" action="{!controller.Next}" rendered="{!controller.hasNext}" reRender="dt" />
+        &nbsp;
+        <apex:commandLink value="Last" action="{!controller.Last}" rendered="{!controller.hasNext}" reRender="dt" />
+         
+    </centre>
+   </apex:form>
+</apex:page>

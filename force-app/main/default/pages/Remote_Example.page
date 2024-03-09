@@ -1,0 +1,17 @@
+<apex:page controller="Remote_Example" id="page" >
+    <apex:form id="fm"> 
+        <script>
+        	function show(){
+                var fname=document.getElementById('page:fm:fname').value;
+                var lname=document.getElementById('page:fm:lname').value;
+                Remote_Example.callme('sai','kiran',function(result,event){
+                									document.getElementById('page:fm:res').innerHTML=result;
+                											},{escape :true});
+                }
+        </script>
+        Firstname: <apex:inputText id="fname" /> <br/> <br/>
+        Lastname: <apex:inputText id="lname" /> <br/> <br/>
+        <apex:commandButton value="Submit" oncomplete="show()" /> <br/> <br/>
+        <apex:outputLabel id="res"  />
+    </apex:form>
+</apex:page>

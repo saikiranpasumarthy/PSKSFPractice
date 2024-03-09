@@ -1,0 +1,26 @@
+<apex:page controller="DMLExample5">
+    <apex:form >
+        <apex:selectList size="1" value="{!selected}">
+            <apex:selectOptions value="{!options}" />
+        </apex:selectList>
+        <apex:commandButton value="GO" action="{!search}" />
+        <br/><br/>
+        <apex:pageBlock title="accountlist" rendered="{! accounts!=null}" id="m" >
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Updaterec" action="{!updaterecords}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accounts}" var="a" >
+                <apex:column >
+                    <apex:inputCheckbox value="{!a.flag}" />
+                    <apex:facet name="header"> <apex:inputCheckbox /></apex:facet>
+                </apex:column>
+                <apex:column value="{!a.acc.name}"/>
+                <apex:column value="{!a.acc.industry}"/>
+                <apex:column value="{!a.acc.phone}"/>
+                <apex:column value="{!a.acc.ownership}"/>
+                
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

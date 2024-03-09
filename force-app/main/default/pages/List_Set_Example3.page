@@ -1,0 +1,26 @@
+<apex:page controller="List_Set_Example3">
+    <style>
+    	.box{
+        	width:150px;
+        	height:150px;
+        }
+    </style>
+    <apex:form >
+    	<apex:pageBlock title="MultiSelect" id="pg">
+        	<apex:panelGrid columns="3">
+            	<apex:selectList multiselect="true" styleclass="box" value="{!addLists}">
+                    <apex:selectOptions value="{!notSelected}"/>
+                </apex:selectList>
+                <apex:panelGrid columns="1">
+                    <br/>
+                    <apex:commandButton value="Add"  action="{!addOptions}" reRender="pg"/>
+                    <br/><br/><br/>
+                    <apex:commandButton value="Del" action="{!removeOptions}" reRender="pg"/>
+                </apex:panelGrid>
+                <apex:selectList multiselect="true" styleClass="box" value="{!removeList}">
+                    <apex:selectOptions value="{!selected}"/>
+                </apex:selectList>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

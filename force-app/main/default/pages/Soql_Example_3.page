@@ -1,0 +1,17 @@
+<apex:page controller="Soql_Example_3" >
+    <apex:form >
+        <apex:pageBlock title="accountrecords">
+            <apex:selectList size="1" value="{!selected}" >
+                <apex:actionSupport event="onchange" action="{!get_records}"  reRender="pb"/>
+                <apex:selectOptions value="{!options}"/>
+            </apex:selectList>
+            <apex:pageBlockTable value="{!accs}" var="a" id="pb" >
+                <apex:column value="{!a.id}" />
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.phone}" />
+                <apex:column value="{!a.industry}" />
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

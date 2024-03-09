@@ -1,0 +1,24 @@
+<apex:page controller="Soql_Example_1">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+            <apex:selectList size="1" value="{!selectedlist}" >
+                
+                <apex:actionSupport event="onchange" action="{!set_Dynamic}" reRender="pb" />
+                <apex:selectOptions value="{!selectlist}" />
+            </apex:selectList>
+                <apex:inputText value="{!rows}" />
+            
+            <apex:commandButton value="submit" action="{!set_dynamic_limit}" reRender="pb" />
+                </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accs}" var="a" id="pb" >
+                    <apex:column value="{!a.id}" />
+                    <apex:column value="{!a.name}" />
+                    <apex:column value="{!a.phone}" />
+                    <apex:column value="{!a.industry}" />
+                    <apex:column value="{!a.rating}" />
+                </apex:pageBlockTable>
+                
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

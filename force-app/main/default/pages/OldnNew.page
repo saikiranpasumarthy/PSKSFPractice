@@ -1,0 +1,38 @@
+<apex:page controller="DMLExample1">
+    <apex:sectionHeader title="Account" subtitle="new Account"/>
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="Account">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="save" action="{!save}"/>
+                <apex:commandButton value="reset" action="{!reset}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name"/>
+                    <apex:inputText value="{!Name}"/>
+            	</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Industry"/>
+                    <apex:inputText value="{!Industry}"/>
+            	</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Phone"/>
+                    <apex:inputText value="{!Phone}"/>
+            	</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Ownership"/>
+                    <apex:inputText value="{!Ownership}"/>
+            	</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="amount"/>
+                    <apex:inputText value="{!amount}"/>
+            	</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Rating"/>
+                    <apex:inputText value="{!Rating}"/>
+            	</apex:pageBlockSectionItem>
+             </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

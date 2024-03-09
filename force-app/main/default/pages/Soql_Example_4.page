@@ -1,0 +1,16 @@
+<apex:page controller="Soql_Example_4" >
+    <apex:form >
+        <apex:pageBlock title="account records">
+            <apex:inputText value="{!searchtext}" />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="submit" action="{!get_records}" reRender="pb" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accs}" var="a" id="pb" >
+                <apex:column value="{!a.id}" />
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.phone}" />
+                <apex:column value="{!a.industry}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

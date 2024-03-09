@@ -1,0 +1,17 @@
+<apex:page standardController="Account" extensions="UpdateChangedFieldsController">          
+    <apex:sectionHeader title="Account" subtitle="new Account"/>
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="Account">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="save" action="{!saveChanges}"/>                
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name"/>
+                    <apex:inputText value="{!account.Name}"/>
+            	</apex:pageBlockSectionItem>                
+             </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

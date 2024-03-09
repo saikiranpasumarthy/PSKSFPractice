@@ -1,0 +1,24 @@
+<apex:page controller="SOQL_Example3" >
+    <apex:form >
+        <apex:panelGrid columns="3" id="three">
+            <apex:selectList multiselect="true" value="{!selected}" style="width:100px;height:200px;" >
+                <apex:selectOptions value="{!so}" />
+            </apex:selectList>
+        
+        
+        <apex:panelGrid columns="1" >
+            <br/><br/><br/>            
+            <apex:commandButton value="Query" action="{!getAll}" reRender="three" />
+        </apex:panelGrid>
+        
+        <apex:panelGrid >
+            <apex:dataTable value="{!accs}" var="a" rules="rows" width="600px" cellpadding="5px" frame="border" rendered="{! !ISNULL(accs)}" >
+                <apex:repeat value="{!selected}" var="fld">
+                    <apex:column value="{!a[fld]}" />
+                </apex:repeat>
+            </apex:dataTable>
+        </apex:panelGrid>
+        </apex:panelGrid>
+        
+    </apex:form>
+</apex:page>

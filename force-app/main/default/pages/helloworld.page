@@ -1,0 +1,18 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: helloworld
+  <!-- End Default Content REMOVE THIS -->
+  <apex:form >
+      <apex:outputLabel value="Enter name: " for="name"></apex:outputLabel>
+      <apex:inputText id="name"/><br/><br/>
+      
+      <apex:outputLabel value="Enter username: " for="username"></apex:outputLabel>
+      <apex:inputText id="username"/><br/><br/>
+      
+      <apex:outputLabel value="Enter password: " for="password"></apex:outputLabel>
+      <apex:inputSecret id="password"/><br/><br/>
+      
+  </apex:form>
+  
+</apex:page>

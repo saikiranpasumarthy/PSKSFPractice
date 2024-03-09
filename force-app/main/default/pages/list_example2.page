@@ -1,0 +1,11 @@
+<apex:page controller="list_example2">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:selectList multiselect="true" value="{!selected}">
+                <apex:selectOptions value="{!options}" />                
+            </apex:selectList>
+            <apex:commandButton value="submit" action="{!call}" />
+             {!result}
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,23 @@
+<apex:page standardController="account" extensions="DMLExample4">
+    <apex:form id="fm">
+        <apex:inputText value="{!Searchtext}" />
+                <apex:commandButton value="Search" action="{!search}" reRender="fm"/>
+        <br/><br/>
+        <apex:pageBlock title="account lists" rendered="{! !ISNULL(accounts)}" id="pb">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="update" action="{!updateRecords}" reRender="pb"/>
+            </apex:pageBlockButtons>
+                <apex:pageBlockTable value="{!accounts}" var="a">
+                    <apex:column >
+                        <apex:inputCheckbox value="{!a.flag}"/>
+                        <apex:facet name="header"><apex:inputCheckbox /></apex:facet>
+                    </apex:column>
+                    <apex:column value="{!a.acc.name}"/>
+                    <apex:column value="{!a.acc.phone}"/>
+                    <apex:column value="{!a.acc.industry}"/>
+                    <apex:column value="{!a.acc.ownership}"/>
+                </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

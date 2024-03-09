@@ -1,0 +1,31 @@
+<apex:page standardController="Account" extensions="Account_New">
+    <apex:form >
+        <apex:sectionHeader title="Account" subtitle="New Account" help="/apex/Accpunt_one"/>
+        <apex:pageBlock title="Account_Contact">
+            <apex:pageBlockButtons location="bottom" dir="LTR">
+                <apex:commandButton value="Save" action="{!create}" />
+                
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account" collapsible="false" >
+                <apex:inputField value="{!Account.Name}" />
+                <apex:inputField value="{!Account.Phone}" />
+                <apex:inputField value="{!Account.Industry}" />
+                <apex:inputField value="{!Account.AnnualRevenue}" />
+                <apex:inputField value="{!Account.Rating}" />
+                <apex:inputField value="{!Account.Active__c}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact" collapsible="false" >
+                <apex:inputField value="{!Con.Lastname}" />
+                <apex:inputField value="{!Con.Phone}" />
+                <apex:inputField value="{!Con.Firstname}" />
+                <apex:inputField value="{!Con.Email}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Opportunity" collapsible="false" >
+                <apex:inputField value="{!opp.Name}" />
+                <apex:inputField value="{!opp.Stagename}" />
+                <apex:inputField value="{!opp.Amount}" />
+                <apex:inputField value="{!opp.closeDate}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

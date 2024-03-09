@@ -1,0 +1,21 @@
+<apex:page controller="Soql_Example_2" >
+    <apex:form >
+        <apex:pageBlock title="offsetexample">
+            <apex:pageBlockButtons location="top">
+                <apex:inputText value="{!offsetv}" />
+                <apex:commandButton value="static" action="{!set_offstatic}" />
+                <apex:commandButton value="dynamic" action="{!set_dynoffset}" />
+            </apex:pageBlockButtons>
+            <apex:selectList size="1" value="{!selected}">
+                <apex:selectOptions value="{!sellist}"/>
+                <apex:actionSupport event="onchange" action="{!set_dynsellist}" />
+            </apex:selectList>
+            <apex:pageBlockTable value="{!accs}" var="a" >
+                <apex:column value="{!a.id}" />
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.phone}" />
+                <apex:column value="{!a.industry}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

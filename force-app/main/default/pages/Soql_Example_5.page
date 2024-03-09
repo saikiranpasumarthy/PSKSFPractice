@@ -1,0 +1,24 @@
+<apex:page controller="Soql_Example_5" >
+    <apex:form id="pb">
+        <apex:pageBlock >
+            <apex:inputText value="{!userin}"  />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="submit" action="{!get_records}" reRender="pb" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!opps}" var="o"  >
+                <apex:column value="{!o.id}" />
+                <apex:column value="{!o.StageName}" />
+                <apex:column value="{!o.Account.name}" />
+                <apex:column value="{!o.Owner.name}" />
+                <apex:column value="{!o.Owner.username}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:pageBlock >
+             <apex:pageBlockSection >
+                <apex:pageMessages >     </apex:pageMessages>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

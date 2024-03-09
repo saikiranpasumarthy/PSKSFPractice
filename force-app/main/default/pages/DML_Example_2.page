@@ -1,0 +1,28 @@
+<apex:page controller="DML_Example_2" sidebar="false">
+    <apex:form >
+    	<apex:pageBlock title="Accounts" id="one">
+        <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Create" action="{!create}" />
+                <apex:commandButton value="Cancel" action="{!clear}" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockTable value="{!accounts}" var="a">
+                <apex:column headerValue="Name" >
+                    <apex:inputText value="{!a.name}" />
+                </apex:column>
+                <apex:column headerValue="Phone" >
+                    <apex:inputText value="{!a.Phone}" />
+                </apex:column>
+                <apex:column headerValue="Industry" >
+                    <apex:inputText value="{!a.industry}" />
+                </apex:column>
+                <apex:column headerValue="Type" >
+                    <apex:inputText value="{!a.type}" />
+                </apex:column>
+                <apex:column headerValue="Action">
+                    <apex:commandButton value="Add" action="{!add}" reRender="one" />
+                </apex:column>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
