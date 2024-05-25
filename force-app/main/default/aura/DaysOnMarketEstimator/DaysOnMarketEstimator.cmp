@@ -3,7 +3,7 @@
 
 	<!-- 
 		A component used to predict the number of days a property will stay on the market based on the asking price.
-		The prediction service is stubbed in this version of the component.
+		The prediction service is stubbed in this version of the component. 
 	-->
 
 	<ltng:require scripts="{!$Resource.countup7}" />
