@@ -1,0 +1,10 @@
+.container {
+    overflow: hidden;
+    color: #f5b041;
+}
+
+.bar {
+    margin-left: var(--lwc-varSpacingHorizontalXxSmall, spacingXxSmall);
+    height: var(--lwc-squareIconMediumBoundaryAlt, 2.25rem);
+    background-color: #f5b041;
+}

@@ -9,7 +9,7 @@ public class BatchNextOpportunityTask implements Database.Batchable<sObject>, Da
     
     public Database.QueryLocator start(Database.BatchableContext BC){
         
-        String query =  'Select ID, CreatedDate, (SELECT Id, Status FROM Tasks) from Opportunity where CreatedDate < TODAY';
+        String query =  'Select ID, CreatedDate, StageName (SELECT Id, Status FROM Tasks) from Opportunity where CreatedDate < TODAY';
         
         return Database.getQueryLocator(query);
     }

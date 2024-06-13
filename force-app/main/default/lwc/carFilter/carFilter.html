@@ -1,0 +1,69 @@
+<template>
+    <lightning-card title="Filters" icon-name="standard:calibration">
+       <div class="slds-var-m-horizontal_medium">
+
+            <lightning-input
+                label="Search"
+                type="search"
+                variant="label-hidden"
+                value={filters.searchKey}
+                onchange={handleSearchKeyPress}>
+            </lightning-input>
+
+            <section class="slider_section">
+                <lightning-slider 
+                  label="Max Price" 
+                  max="999999"
+                  min="0"
+                  step="100"
+                  value={filters.maxPrice}
+                  variant="standard"
+                  onchange={handleMaxPriceChange}
+                ></lightning-slider>
+            </section>
+
+            <section>
+                <h2>Category</h2>
+                <template lwc:if={categories.data}>
+                    <template for:each={categories.data.values} for:item="category">
+
+                        <lightning-input
+                            key={category.value}
+                            checked
+                            label={category.label}
+                            type="checkbox"
+                            data-name="categories"
+                            data-value={category.value}
+                            onchange={handleCheckbox}
+                        ></lightning-input>
+
+                    </template>
+                </template>
+                <template lwc:if={categories.error}>
+                    <div>{categoryError}</div>
+                </template>
+            </section>
+            <section>
+                <h2>Make</h2>
+                <template lwc:if={makeType.data}>
+                    <template for:each={makeType.data.values} for:item="make">
+
+                        <lightning-input
+                            key={make.value}
+                            checked
+                            label={make.label}
+                            type="checkbox"
+                            data-name="makeType"
+                            data-value={make.value}
+                            onchange={handleCheckbox}
+                        ></lightning-input>
+
+                    </template>
+                </template>
+                <template lwc:if={makeType.error}>
+                    <div>{makeError}</div>
+                </template>
+            </section>
+       </div>
+    </lightning-card>
+</template>

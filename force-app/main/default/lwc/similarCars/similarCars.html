@@ -1,0 +1,48 @@
+<template>
+    <lightning-card icon-name="standard:link" title="Similar Cars">
+        <div class="slds-var-m-around_medium">
+            <template if:false={similarCars}>
+                <div class="slds-align_absolute-center">
+                    <lightning-button
+                  variant="destructive"
+                  label="Fetch Similar Cars" 
+                  onclick={handleSimilarCarClick} 
+                ></lightning-button>
+                </div>
+            </template>
+            
+            <template lwc:if={similarCars}>
+                <template for:each={similarCars} for:item="car">
+                    <lightning-layout 
+                      key={car.Id}
+                      vertical-align="start"
+                    >
+                      <lightning-layout-item>
+                        <img src={car.Picture_URL__c} alt="Car Picture" class="car">
+                      </lightning-layout-item>
+                      <lightning-layout-item flexibility="grow" class="slds-var-p-horizontal_small">
+                            <p>{car.Name}</p>
+                            <p>
+                                <lightning-formatted-number 
+
+                                  value={car.MSRP__c}
+                                  format-style="currency"
+                                  currency-code="USD"
+                                  maximum-fraction-digits="0"></lightning-formatted-number>
+                            </p>
+
+                      </lightning-layout-item>
+                      <lightning-layout-item>
+                        <lightning-button 
+                          variant="base"
+                          data-id={car.Id}
+                          label="View Detail" 
+                          onclick={handleViewDetailsClick} 
+                        ></lightning-button>
+                      </lightning-layout-item>
+                    </lightning-layout>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

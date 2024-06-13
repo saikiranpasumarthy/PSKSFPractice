@@ -1,0 +1,8 @@
+.container {
+    overflow: hidden;
+}
+
+.bar {
+    height: var(--lwc-squareIconMediumBoundaryAlt, 2.25rem);
+    background-color: #f5b041;
+}

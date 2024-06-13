@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="ApiSpread" icon-name="custom:custom14">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                name="firstName"
+                label="First Name"
+                onchange={handleChange}
+                value={props.firstName}
+            ></lightning-input>
+            <lightning-input
+                name="lastName"
+                label="Last Name"
+                onchange={handleChange}
+                value={props.lastName}
+            ></lightning-input>
+            <c-child lwc:spread={props}></c-child>
+        </div>
+    </lightning-card>
+</template>

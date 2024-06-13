@@ -1,0 +1,30 @@
+<template>
+    <lightning-card
+        title="ApiSetterGetter"
+        icon-name="standard:product_consumed"
+    >
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                label="Description"
+                onchange={handleDescriptionChange}
+                value={description}
+            ></lightning-input>
+            <lightning-input
+                label="Priority"
+                type="checkbox"
+                onchange={handlePriorityChange}
+                checked={priority}
+            ></lightning-input>
+            <div class="slds-var-p-vertical_small">
+                <lightning-button
+                    label="Add Todo"
+                    variant="brand"
+                    onclick={handleSave}
+                ></lightning-button>
+            </div>
+            <div class="todo-list slds-is-relative">
+                <c-todo-list todos={todos}></c-todo-list>
+            </div>
+        </div> 
+    </lightning-card>
+</template>
