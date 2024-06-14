@@ -13,7 +13,8 @@ export default class MergePdfs extends LightningElement {
         if (this.isLibLoaded) {
             return;
         }
-        loadScript(this, pdfLib + '/pdfLib/pdf-lib.min.js')
+        //loadScript(this, pdfLib + '/pdfLib/pdf-lib.min.js')
+        loadScript(this, pdfLib)
             .then(() => {
                 console.log('loaded script successfully');
                 if (window['pdfLib'] || window['PDFLib']) {
