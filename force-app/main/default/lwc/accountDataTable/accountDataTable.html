@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Accounts">
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+                name="recordTypeFilter"
+                label="Record Type"
+                value={selectedRecordType}
+                placeholder="Select Record Type"
+                options={recordTypeOptions}
+                onchange={handleRecordTypeChange}>
+            </lightning-combobox>
+
+            <lightning-combobox
+                name="picklistFieldFilter"
+                label="Picklist Field"
+                value={selectedPicklistField}
+                placeholder="Select Picklist Field"
+                options={picklistFieldOptions}
+                onchange={handlePicklistFieldChange}>
+            </lightning-combobox>
+
+            <lightning-combobox
+                name="picklistValueFilter"
+                label="Picklist Value"
+                value={selectedPicklistValue}
+                placeholder="Select Picklist Value"
+                options={picklistValueOptions}
+                onchange={handlePicklistValueChange}>
+            </lightning-combobox>
+        </div>
+
+        <lightning-datatable
+            key-field="Id"
+            data={accounts}
+            columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

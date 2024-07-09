@@ -1,6 +1,13 @@
-trigger AccountTrigger on Account (after insert) 
+trigger AccountTrigger on Account (before insert, before update, before delete, after insert, after update, after delete, after undelete) 
 {
-    List<Contact> objCon = new List<contact> ();
+
+    if(TriggerHelper.runOnce(Trigger.newMap?.keySet(), Trigger.oldMap?.keySet(), Trigger.operationType)){
+        return;
+    }
+    if (trigger.isAfter && trigger.isUpdate) {
+        AccountTriggerHelper.updateContactAccountCountryField(trigger.new, trigger.oldMap);
+    }
+    /*List<Contact> objCon = new List<contact> ();
      
           for (Account objAcc:Trigger.new)
     { 
@@ -13,7 +20,7 @@ trigger AccountTrigger on Account (after insert)
         }
     }
           
-     insert objcon;  
+     insert objcon;  */
     
     
 }
