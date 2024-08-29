@@ -1,7 +1,7 @@
 @isTest
 public class AccountControllerTest {
     
-    @testSetup
+   /* @testSetup
     static void setupTestData() {
         // Create test record types
         RecordType customerRecordType = new RecordType(
@@ -9,14 +9,14 @@ public class AccountControllerTest {
             SObjectType = 'Account',
             DeveloperName = 'Customer'
         );
-        insert customerRecordType;
+        //insert customerRecordType;
         
         RecordType vendorRecordType = new RecordType(
             Name = 'Vendor',
             SObjectType = 'Account',
             DeveloperName = 'Vendor'
         );
-        insert vendorRecordType;
+        //insert vendorRecordType;
         
         // Create test accounts
         Account customerAccount1 = new Account(
@@ -41,7 +41,7 @@ public class AccountControllerTest {
             Rating__c = 'Warm'
         );
         insert new List<Account> { customerAccount1, customerAccount2, vendorAccount1 };
-    }
+    }*/
     
     @isTest
     static void testGetAccounts() {

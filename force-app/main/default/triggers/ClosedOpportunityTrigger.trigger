@@ -1,5 +1,5 @@
 trigger ClosedOpportunityTrigger on Opportunity (before insert, before update) 
-{	
+{   
     //ClosedOpportunityClass.ClosedOpp(trigger.new);
    
         List<task> newtsk = new List<task>();

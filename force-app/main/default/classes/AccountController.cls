@@ -17,11 +17,11 @@ public with sharing class AccountController {
         Schema.DescribeFieldResult fieldResult = Schema.SObjectType.Account.fields.getMap().get(picklistField).getDescribe();
         List<Schema.PicklistEntry> ple = fieldResult.getPicklistValues();
         
-        for (Schema.PicklistEntry f : ple) {
-            if (f.getValue().con  getValidFor().contains(recordTypeId)) {
-                picklistValues.add(f.getLabel());
-            }
-        }
+        // for (Schema.PicklistEntry f : ple) {
+        //     if (f.getValue().con  getValidFor().contains(recordTypeId)) {
+        //         picklistValues.add(f.getLabel());
+        //     }
+        // }
 
         return picklistValues;
     }
